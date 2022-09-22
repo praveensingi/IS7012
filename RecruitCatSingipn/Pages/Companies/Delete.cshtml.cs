@@ -29,7 +29,9 @@ namespace RecruitCatSingipn.Pages.Companies
                 return NotFound();
             }
 
-            Company = await _context.Company.FirstOrDefaultAsync(m => m.Id == id);
+            Company = await _context.Company
+                .Include(c => c.Industry)
+                .Include(c => c.JobTitle).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Company == null)
             {

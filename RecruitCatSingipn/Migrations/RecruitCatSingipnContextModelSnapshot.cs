@@ -53,9 +53,6 @@ namespace RecruitCatSingipn.Migrations
                     b.Property<string>("MobileNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Resigned")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Skills")
                         .HasColumnType("nvarchar(max)");
 

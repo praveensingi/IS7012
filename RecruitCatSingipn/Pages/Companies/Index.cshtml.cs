@@ -23,7 +23,9 @@ namespace RecruitCatSingipn.Pages.Companies
 
         public async Task OnGetAsync()
         {
-            Company = await _context.Company.ToListAsync();
+            Company = await _context.Company
+                .Include(c => c.Industry)
+                .Include(c => c.JobTitle).ToListAsync();
         }
     }
 }

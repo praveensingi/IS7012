@@ -5,9 +5,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit Candidate</h1>
 
-<h4>Candidate</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -31,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Candidate.Address" class="control-label"></label>
-                <input asp-for="Candidate.Address" class="form-control" />
+                <textarea asp-for="Candidate.Address" class="form-control" ></textarea>
                 <span asp-validation-for="Candidate.Address" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -51,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Candidate.Skills" class="control-label"></label>
-                <input asp-for="Candidate.Skills" class="form-control" />
+                <textarea asp-for="Candidate.Skills" class="form-control" ></textarea>
                 <span asp-validation-for="Candidate.Skills" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -66,17 +65,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Candidate.IndustryId" class="control-label"></label>
-                <input asp-for="Candidate.IndustryId" class="form-control" />
+                <select asp-for="Candidate.IndustryId" class="form-control" asp-items="ViewBag.IndustryId"></select>
                 <span asp-validation-for="Candidate.IndustryId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Candidate.CompanyId" class="control-label"></label>
-                <input asp-for="Candidate.CompanyId" class="form-control" />
+                <select asp-for="Candidate.CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
                 <span asp-validation-for="Candidate.CompanyId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Candidate.JobTitleId" class="control-label"></label>
-                <input asp-for="Candidate.JobTitleId" class="form-control" />
+                <select asp-for="Candidate.JobTitleId" class="form-control" asp-items="ViewBag.JobTitleId"></select>
                 <span asp-validation-for="Candidate.JobTitleId" class="text-danger"></span>
             </div>
             <div class="form-group">

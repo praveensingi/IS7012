@@ -5,9 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create a new JobTitle</h1>
 
-<h4>JobTitle</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="JobTitle.SkillsRequired" class="control-label"></label>
-                <input asp-for="JobTitle.SkillsRequired" class="form-control" />
+                <textarea asp-for="JobTitle.SkillsRequired" class="form-control" ></textarea>
                 <span asp-validation-for="JobTitle.SkillsRequired" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -5,9 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create a new Company</h1>
 
-<h4>Company</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -45,18 +44,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="Company.Location" class="control-label"></label>
-                <input asp-for="Company.Location" class="form-control" />
+                <textarea asp-for="Company.Location" class="form-control" ></textarea>
                 <span asp-validation-for="Company.Location" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Company.IndustryId" class="control-label"></label>
-                <input asp-for="Company.IndustryId" class="form-control" />
-                <span asp-validation-for="Company.IndustryId" class="text-danger"></span>
+                <select asp-for="Company.IndustryId" class ="form-control" asp-items="ViewBag.IndustryId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Company.JobTitleId" class="control-label"></label>
-                <input asp-for="Company.JobTitleId" class="form-control" />
-                <span asp-validation-for="Company.JobTitleId" class="text-danger"></span>
+                <select asp-for="Company.JobTitleId" class ="form-control" asp-items="ViewBag.JobTitleId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

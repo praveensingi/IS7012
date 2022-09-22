@@ -29,7 +29,10 @@ namespace RecruitCatSingipn.Pages.Candidates
                 return NotFound();
             }
 
-            Candidate = await _context.Candidate.FirstOrDefaultAsync(m => m.Id == id);
+            Candidate = await _context.Candidate
+                .Include(c => c.Company)
+                .Include(c => c.Industry)
+                .Include(c => c.JobTitle).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Candidate == null)
             {

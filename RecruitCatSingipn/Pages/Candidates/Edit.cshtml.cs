@@ -30,12 +30,18 @@ namespace RecruitCatSingipn.Pages.Candidates
                 return NotFound();
             }
 
-            Candidate = await _context.Candidate.FirstOrDefaultAsync(m => m.Id == id);
+            Candidate = await _context.Candidate
+                .Include(c => c.Company)
+                .Include(c => c.Industry)
+                .Include(c => c.JobTitle).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Candidate == null)
             {
                 return NotFound();
             }
+           ViewData["CompanyId"] = new SelectList(_context.Company, "Id", "Name");
+           ViewData["IndustryId"] = new SelectList(_context.Industry, "Id", "Name");
+           ViewData["JobTitleId"] = new SelectList(_context.JobTitle, "Id", "Title");
             return Page();
         }
 
